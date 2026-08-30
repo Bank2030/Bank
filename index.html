@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
+
+  <!-- Science Bank v250 social share preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:site_name" content="بنك العلوم المصرفي">
+  <meta property="og:title" content="بنك العلوم">
+  <meta property="og:description" content="مرحبًا بك في بنك العلوم - مدرسة الابتكار للطفولة المبكرة - الأحساء">
+  <meta property="og:image" content="https://as-soso-as2011-design.github.io/science-bank-preview.png?v=252">
+  <meta property="og:image:secure_url" content="https://as-soso-as2011-design.github.io/science-bank-preview.png?v=252">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="بنك العلوم المصرفي">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="بنك العلوم المصرفي">
+  <meta name="twitter:description" content="منصة بنك العلوم المصرفي - مدرسة الابتكار للطفولة المبكرة - الأحساء">
+  <meta name="twitter:image" content="https://as-soso-as2011-design.github.io/science-bank-preview.png?v=252">
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b5361">
@@ -28760,3 +28778,46 @@ body.science-student-open-v240 #studentDashboard{
 }
 </style>
 <!-- Science Bank v249: darker readable text on light science sections -->
+
+
+<script id="science-bank-whatsapp-number-v251">
+(function(){
+  const LOCAL='0530281787';
+  const INTL='966530281787';
+
+  function fixLinks(){
+    document.querySelectorAll('a[href]').forEach(a=>{
+      let href=a.getAttribute('href')||'';
+      href=href
+        .replace(/0502234335/g,LOCAL)
+        .replace(/\+?966502234335/g,INTL)
+        .replace(/00966502234335/g,INTL);
+
+      if(/wa\.me\/0530281787/i.test(href)){
+        href=href.replace(/wa\.me\/0530281787/i,'wa.me/'+INTL);
+      }
+      if(/(whatsapp\.com\/send\?phone=)0530281787/i.test(href)){
+        href=href.replace(/(whatsapp\.com\/send\?phone=)0530281787/i,'$1'+INTL);
+      }
+      if(/tel:(?:\+?966)?530281787/i.test(href)){
+        href='tel:'+LOCAL;
+      }
+      a.setAttribute('href',href);
+    });
+
+    document.querySelectorAll('body *').forEach(el=>{
+      if(el.children.length!==0)return;
+      const t=String(el.textContent||'');
+      if(t.includes('0502234335')) el.textContent=t.replaceAll('0502234335',LOCAL);
+      if(t.includes('966502234335')) el.textContent=t.replaceAll('966502234335',LOCAL);
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',fixLinks,{once:true});
+  } else fixLinks();
+
+  [300,1000,2500].forEach(ms=>setTimeout(fixLinks,ms));
+})();
+</script>
+<!-- Science Bank v251: WhatsApp contact updated to 0530281787 -->
