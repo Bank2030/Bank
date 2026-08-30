@@ -7778,36 +7778,36 @@ input:focus,select:focus,textarea:focus{border-color:#49af93 !important;box-shad
 </section>
 
 <section class="roles elegant-cards">
-  <article class="e-card e-teacher" data-role="teacher">
+  <article class="e-card e-teacher" data-role="teacher" onclick="window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('teacher')">
     <div class="e-side">
       <div class="e-title"><span class="e-num">١.</span> المعلمة</div>
       <div class="e-role-sub">إدارة بنك العلوم</div>
       <div class="e-divider"></div>
-      <button class="e-btn" data-role="teacher">دخول المعلمة ‹</button>
+      <button type="button" class="e-btn" data-role="teacher" onclick="event.stopPropagation(); window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('teacher')">دخول المعلمة ‹</button>
     </div>
     <div class="e-icons teacher-icons">
       <span>🔬</span><span>🧪</span>
     </div>
   </article>
 
-  <article class="e-card e-admin" data-role="admin">
+  <article class="e-card e-admin" data-role="admin" onclick="window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('admin')">
     <div class="e-side">
       <div class="e-title"><span class="e-num">٢.</span> الإدارة</div>
       <div class="e-role-sub">المديرة والمشرفة</div>
       <div class="e-divider"></div>
-      <button class="e-btn" data-role="admin">دخول الإدارة ‹</button>
+      <button type="button" class="e-btn" data-role="admin" onclick="event.stopPropagation(); window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('admin')">دخول الإدارة ‹</button>
     </div>
     <div class="e-icons admin-icons">
       <span>🧬</span><span>⚗️</span>
     </div>
   </article>
 
-  <article class="e-card e-students" data-role="student">
+  <article class="e-card e-students" data-role="student" onclick="window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('student')">
     <div class="e-side">
       <div class="e-title"><span class="e-num">٣.</span> الطلاب والطالبات</div>
       <div class="e-role-sub">الدخول إلى الحساب والرصيد</div>
       <div class="e-divider"></div>
-      <button class="e-btn" data-role="student">دخول الطلاب ‹</button>
+      <button type="button" class="e-btn" data-role="student" onclick="event.stopPropagation(); window.__scienceOpenRoleDirect && window.__scienceOpenRoleDirect('student')">دخول الطلاب ‹</button>
     </div>
     <div class="e-icons student-icons">
       <span>🌱</span><span>🔍</span><span>🧠</span>
@@ -15077,6 +15077,8 @@ document.addEventListener('DOMContentLoaded',()=>{
       frame.classList.add("show");
     }, 2300);
   }
+
+  window.__scienceOpenRoleDirect = openRole;
 
   function closeFlow(){
     clearTimeout(timer);
@@ -28821,3 +28823,610 @@ body.science-student-open-v240 #studentDashboard{
 })();
 </script>
 <!-- Science Bank v251: WhatsApp contact updated to 0530281787 -->
+
+
+<style id="science-bank-ipad-home-fix-v253">
+/* v253 — تثبيت شكل بطاقات الدخول على الآيباد وإرجاع قابلية الضغط */
+.page{
+  position:relative !important;
+  z-index:1 !important;
+}
+.page .roles.elegant-cards{
+  position:relative !important;
+  z-index:50 !important;
+  width:min(94vw,1050px) !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(250px,1fr)) !important;
+  gap:20px !important;
+  margin:18px auto 36px !important;
+  padding:0 12px !important;
+  pointer-events:auto !important;
+}
+.page .roles.elegant-cards .e-card{
+  position:relative !important;
+  z-index:51 !important;
+  min-width:0 !important;
+  min-height:235px !important;
+  height:auto !important;
+  padding:22px 18px 20px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  overflow:visible !important;
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+}
+.page .roles.elegant-cards .e-icons{
+  order:1 !important;
+  min-height:50px !important;
+  margin:2px 0 10px !important;
+  pointer-events:none !important;
+}
+.page .roles.elegant-cards .e-side{
+  order:2 !important;
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  pointer-events:auto !important;
+}
+.page .roles.elegant-cards .e-title{
+  position:static !important;
+  display:block !important;
+  min-height:36px !important;
+  margin:0 0 4px !important;
+  font-size:23px !important;
+  line-height:1.35 !important;
+  text-align:center !important;
+  pointer-events:none !important;
+}
+.page .roles.elegant-cards .e-role-sub{
+  position:static !important;
+  display:block !important;
+  min-height:26px !important;
+  margin:0 0 15px !important;
+  text-align:center !important;
+  pointer-events:none !important;
+}
+.page .roles.elegant-cards .e-btn{
+  position:relative !important;
+  inset:auto !important;
+  z-index:60 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  max-width:235px !important;
+  min-height:50px !important;
+  height:50px !important;
+  margin:0 auto !important;
+  padding:0 14px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+  touch-action:manipulation !important;
+  cursor:pointer !important;
+  -webkit-tap-highlight-color:rgba(24,117,138,.15) !important;
+}
+.page .roles.elegant-cards .e-card::before,
+.page .roles.elegant-cards .e-card::after{
+  pointer-events:none !important;
+}
+
+/* إزالة الجرس القديم الظاهر أعلى الواجهة */
+.page .iconbox.notice,
+.page button.notice{
+  display:none !important;
+  pointer-events:none !important;
+}
+
+/* الآيباد أفقي/عمودي */
+@media (min-width:701px) and (max-width:1180px){
+  .page .roles.elegant-cards{
+    width:min(96vw,980px) !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+  .page .roles.elegant-cards .e-card{
+    min-height:225px !important;
+    padding:20px 12px 18px !important;
+  }
+  .page .roles.elegant-cards .e-title{font-size:20px !important}
+  .page .roles.elegant-cards .e-role-sub{font-size:13px !important}
+  .page .roles.elegant-cards .e-btn{
+    max-width:210px !important;
+    font-size:16px !important;
+  }
+}
+@media (max-width:700px){
+  .page .roles.elegant-cards{
+    grid-template-columns:1fr !important;
+    width:92vw !important;
+  }
+  .page .roles.elegant-cards .e-card{min-height:190px !important}
+}
+</style>
+
+<script id="science-bank-ipad-tap-fix-v253">
+(function(){
+  const SEL='.roles.elegant-cards .e-card[data-role]';
+
+  function cleanHiddenBlockers(){
+    const flow=document.getElementById('bankFlowOverlay');
+    if(flow && !flow.classList.contains('show')){
+      flow.style.setProperty('display','none','important');
+      flow.style.setProperty('pointer-events','none','important');
+    }
+    const modal=document.getElementById('modal');
+    if(modal && !modal.classList.contains('show')){
+      modal.style.setProperty('display','none','important');
+      modal.style.setProperty('pointer-events','none','important');
+    }
+  }
+
+  function restoreFlowPointer(){
+    const flow=document.getElementById('bankFlowOverlay');
+    if(flow && flow.classList.contains('show')){
+      flow.style.removeProperty('display');
+      flow.style.setProperty('pointer-events','auto','important');
+    }
+  }
+
+  // احتياط للآيباد: إذا اعترض عنصر شفاف اللمسة، نحدد البطاقة من إحداثيات اللمس
+  // ثم نطلق Click حقيقي عليها ليستقبله نظام الدخول الأصلي.
+  let lastSynthetic=0;
+  document.addEventListener('pointerup',function(e){
+    if(Date.now()-lastSynthetic<400)return;
+    const flow=document.getElementById('bankFlowOverlay');
+    if(flow && flow.classList.contains('show'))return;
+
+    const cards=[...document.querySelectorAll(SEL)];
+    const card=cards.find(c=>{
+      const r=c.getBoundingClientRect();
+      return e.clientX>=r.left && e.clientX<=r.right &&
+             e.clientY>=r.top  && e.clientY<=r.bottom;
+    });
+    if(!card)return;
+
+    const direct=e.target && e.target.closest && e.target.closest(SEL);
+    if(direct)return; // الضغط الطبيعي سيعالجه النظام الأصلي
+
+    lastSynthetic=Date.now();
+    card.dispatchEvent(new MouseEvent('click',{
+      bubbles:true,cancelable:true,view:window,
+      clientX:e.clientX,clientY:e.clientY
+    }));
+  },true);
+
+  // تأكيد أن جميع بطاقات وأزرار الدخول قابلة للمس.
+  function fix(){
+    cleanHiddenBlockers();
+    document.querySelectorAll(SEL).forEach(card=>{
+      card.style.setProperty('pointer-events','auto','important');
+      card.querySelectorAll('.e-btn').forEach(btn=>{
+        btn.disabled=false;
+        btn.style.setProperty('pointer-events','auto','important');
+      });
+    });
+  }
+
+  new MutationObserver(function(){
+    restoreFlowPointer();
+  }).observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:['class']});
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',fix,{once:true});
+  }else fix();
+  [250,700,1500,3000].forEach(ms=>setTimeout(fix,ms));
+})();
+</script>
+<!-- Science Bank v253: iPad home card layout + reliable role-button tapping -->
+
+
+<style id="science-bank-ipad-direct-v254-style">
+.roles.elegant-cards{
+  width:min(92vw,1000px)!important;
+  margin:28px auto 38px!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:22px!important;
+  position:relative!important;
+  z-index:100!important;
+  direction:rtl!important;
+}
+.roles.elegant-cards .e-card{
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:245px!important;
+  height:245px!important;
+  padding:22px 18px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  border-radius:26px!important;
+  overflow:hidden!important;
+  position:relative!important;
+  z-index:101!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  cursor:pointer!important;
+  background:#fff!important;
+  box-shadow:0 10px 28px rgba(11,83,97,.08)!important;
+}
+.roles.elegant-cards .e-teacher{border:3px solid #27a57d!important}
+.roles.elegant-cards .e-admin{border:3px solid #23889b!important}
+.roles.elegant-cards .e-students{border:3px solid #79a83b!important}
+
+.roles.elegant-cards .e-side{
+  width:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  position:relative!important;
+  z-index:3!important;
+  order:2!important;
+}
+.roles.elegant-cards .e-icons{
+  position:relative!important;
+  z-index:3!important;
+  order:1!important;
+  min-height:52px!important;
+  margin:0 0 4px!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:7px!important;
+  pointer-events:none!important;
+}
+.roles.elegant-cards .e-icons span{font-size:28px!important}
+.roles.elegant-cards .e-title{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  margin:0 0 4px!important;
+  padding:0!important;
+  min-height:34px!important;
+  font-size:22px!important;
+  line-height:1.3!important;
+  text-align:center!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  color:#123f46!important;
+  pointer-events:none!important;
+}
+.roles.elegant-cards .e-num{color:#d4a424!important}
+.roles.elegant-cards .e-role-sub{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  margin:0 0 8px!important;
+  min-height:24px!important;
+  font-size:14px!important;
+  line-height:1.5!important;
+  text-align:center!important;
+  color:#567078!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  pointer-events:none!important;
+}
+.roles.elegant-cards .e-divider{
+  display:block!important;
+  position:relative!important;
+  width:86px!important;
+  height:2px!important;
+  margin:3px auto 12px!important;
+  flex:none!important;
+}
+.roles.elegant-cards .e-btn{
+  box-sizing:border-box!important;
+  position:relative!important;
+  inset:auto!important;
+  z-index:110!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:min(100%,220px)!important;
+  min-width:0!important;
+  min-height:50px!important;
+  height:50px!important;
+  margin:0 auto!important;
+  padding:0 12px!important;
+  border:0!important;
+  border-radius:14px!important;
+  font-size:17px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+  cursor:pointer!important;
+}
+.roles.elegant-cards .e-teacher .e-btn{background:#229572!important;color:#fff!important}
+.roles.elegant-cards .e-admin .e-btn{background:#197f91!important;color:#fff!important}
+.roles.elegant-cards .e-students .e-btn{background:#739e39!important;color:#fff!important}
+
+.roles.elegant-cards .e-card::before,
+.roles.elegant-cards .e-card::after,
+.roles.elegant-cards .e-divider::before,
+.roles.elegant-cards .e-divider::after,
+.page .hero::before,.page .hero::after,
+.page .math,.page .science-float{
+  pointer-events:none!important;
+}
+
+#bankFlowOverlay:not(.show){
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+#bankFlowOverlay.show{
+  display:block!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  z-index:2147483000!important;
+}
+
+@media (min-width:700px) and (max-width:1366px){
+  .roles.elegant-cards{
+    width:min(88vw,980px)!important;
+    gap:18px!important;
+  }
+  .roles.elegant-cards .e-card{
+    min-height:235px!important;
+    height:235px!important;
+    padding:18px 14px!important;
+  }
+  .roles.elegant-cards .e-title{font-size:20px!important}
+  .roles.elegant-cards .e-role-sub{font-size:13px!important}
+  .roles.elegant-cards .e-btn{
+    width:min(100%,200px)!important;
+    font-size:16px!important;
+  }
+}
+@media (max-width:699px){
+  .roles.elegant-cards{
+    width:90vw!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .roles.elegant-cards .e-card{
+    height:auto!important;
+    min-height:205px!important;
+  }
+}
+</style>
+
+<script id="science-bank-ipad-direct-v254">
+(function(){
+  function bind(){
+    document.querySelectorAll('.roles.elegant-cards .e-card[data-role]').forEach(card=>{
+      card.style.setProperty('pointer-events','auto','important');
+      card.style.setProperty('touch-action','manipulation','important');
+      const btn=card.querySelector('.e-btn');
+      if(btn){
+        btn.disabled=false;
+        btn.style.setProperty('pointer-events','auto','important');
+        btn.style.setProperty('touch-action','manipulation','important');
+      }
+    });
+  }
+
+  function openDirect(role){
+    if(typeof window.__scienceOpenRoleDirect === 'function'){
+      window.__scienceOpenRoleDirect(role);
+      return true;
+    }
+    return false;
+  }
+
+  let last=0;
+  function handler(e){
+    const node=e.target && e.target.closest ? e.target.closest('.roles.elegant-cards [data-role]') : null;
+    if(!node) return;
+
+    const card=node.closest('.e-card[data-role]') || node;
+    const role=card.getAttribute('data-role');
+    if(!/^(teacher|admin|student)$/.test(role||'')) return;
+
+    const now=Date.now();
+    if(now-last<450){
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+
+    if(openDirect(role)){
+      last=now;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }
+
+  document.addEventListener('touchend',handler,{capture:true,passive:false});
+  document.addEventListener('click',handler,true);
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',bind,{once:true});
+  } else {
+    bind();
+  }
+  setTimeout(bind,300);
+  setTimeout(bind,1000);
+})();
+</script>
+<!-- Science Bank v254: direct real login opener + iPad card rebuild -->
+
+
+<style id="science-bank-role-rebuild-v255-style">
+/* v255: بطاقات دخول مستقلة للجوال والآيباد */
+#scienceRoleCardsV255{
+  width:min(92vw,1020px)!important;
+  margin:28px auto 38px!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:20px!important;
+  direction:rtl!important;
+  position:relative!important;
+  z-index:5000!important;
+  pointer-events:auto!important;
+}
+#scienceRoleCardsV255 .science-role-v255{
+  min-height:220px!important;
+  background:#fff!important;
+  border-radius:26px!important;
+  padding:24px 18px 20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  box-shadow:0 10px 28px rgba(12,79,86,.08)!important;
+  position:relative!important;
+  z-index:5001!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+}
+#scienceRoleCardsV255 .teacher{border:3px solid #269d79!important}
+#scienceRoleCardsV255 .admin{border:3px solid #23869a!important}
+#scienceRoleCardsV255 .student{border:3px solid #79a43c!important}
+#scienceRoleCardsV255 .ico{
+  font-size:32px!important;
+  line-height:1!important;
+  margin-bottom:13px!important;
+  pointer-events:none!important;
+}
+#scienceRoleCardsV255 .title{
+  font-size:22px!important;
+  line-height:1.4!important;
+  font-weight:900!important;
+  color:#123f46!important;
+  margin-bottom:5px!important;
+  text-align:center!important;
+  pointer-events:none!important;
+}
+#scienceRoleCardsV255 .sub{
+  font-size:14px!important;
+  line-height:1.5!important;
+  color:#647a7e!important;
+  min-height:23px!important;
+  margin-bottom:16px!important;
+  text-align:center!important;
+  pointer-events:none!important;
+}
+#scienceRoleCardsV255 button{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  width:min(100%,220px)!important;
+  height:52px!important;
+  min-height:52px!important;
+  border:0!important;
+  border-radius:15px!important;
+  color:#fff!important;
+  font-family:inherit!important;
+  font-size:17px!important;
+  font-weight:900!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  cursor:pointer!important;
+  position:relative!important;
+  z-index:5010!important;
+  pointer-events:auto!important;
+  touch-action:manipulation!important;
+}
+#scienceRoleCardsV255 .teacher button{background:#228f6e!important}
+#scienceRoleCardsV255 .admin button{background:#197d8f!important}
+#scienceRoleCardsV255 .student button{background:#71983a!important}
+
+.roles.elegant-cards{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+@media(max-width:699px){
+  #scienceRoleCardsV255{
+    width:90vw!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  #scienceRoleCardsV255 .science-role-v255{min-height:180px!important}
+}
+@media(min-width:700px) and (max-width:1366px){
+  #scienceRoleCardsV255{
+    width:min(88vw,980px)!important;
+    gap:16px!important;
+  }
+  #scienceRoleCardsV255 .science-role-v255{
+    min-height:210px!important;
+    padding:20px 14px!important;
+  }
+  #scienceRoleCardsV255 .title{font-size:20px!important}
+  #scienceRoleCardsV255 button{font-size:16px!important}
+}
+</style>
+
+<script id="science-bank-role-rebuild-v255">
+(function(){
+  function openRoleV255(role){
+    if(typeof window.__scienceOpenRoleDirect === 'function'){
+      window.__scienceOpenRoleDirect(role);
+      return;
+    }
+    /* احتياط: إطلاق حدث على البطاقة الأصلية لو تأخر تحميل الدالة */
+    const old=document.querySelector('.roles.elegant-cards .e-card[data-role="'+role+'"]');
+    if(old) old.click();
+  }
+  window.__scienceOpenRoleV255=openRoleV255;
+
+  function build(){
+    if(document.getElementById('scienceRoleCardsV255')) return;
+    const old=document.querySelector('.roles.elegant-cards');
+    if(!old || !old.parentNode) return;
+
+    const box=document.createElement('section');
+    box.id='scienceRoleCardsV255';
+    box.setAttribute('aria-label','بوابات الدخول');
+    box.innerHTML=`
+      <div class="science-role-v255 teacher">
+        <div class="ico">🧪 🔬</div>
+        <div class="title">١. المعلمة</div>
+        <div class="sub">إدارة بنك العلوم</div>
+        <button type="button" onclick="window.__scienceOpenRoleV255('teacher')">دخول المعلمة ‹</button>
+      </div>
+      <div class="science-role-v255 admin">
+        <div class="ico">🧬</div>
+        <div class="title">٢. الإدارة</div>
+        <div class="sub">المديرة والمشرفة</div>
+        <button type="button" onclick="window.__scienceOpenRoleV255('admin')">دخول الإدارة ‹</button>
+      </div>
+      <div class="science-role-v255 student">
+        <div class="ico">🧠 🔎 🌱</div>
+        <div class="title">٣. الطلاب والطالبات</div>
+        <div class="sub">الدخول إلى الحساب والرصيد</div>
+        <button type="button" onclick="window.__scienceOpenRoleV255('student')">دخول الطلاب ‹</button>
+      </div>`;
+    old.parentNode.insertBefore(box,old);
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',build,{once:true});
+  }else build();
+  setTimeout(build,300);
+  setTimeout(build,1200);
+})();
+</script>
+<!-- v255 -->
